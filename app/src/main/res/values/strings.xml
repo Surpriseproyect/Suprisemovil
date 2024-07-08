@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Surprise</string>
+    <string-array name="roles_array">
+        <item>Cliente</item>
+        <item>Gerente</item>
+        <item>Cajero</item>
+    </string-array>
+
+    <string-array name="status_array">
+        <item>Pagado</item>
+        <item>Pendiente</item>
+        <item>En espera</item>
+    </string-array>
+
+    <string name="role_prompt">Seleccione un rol</string>
+    <string name="status_prompt">Seleccione un estado</string>
+</resources>
