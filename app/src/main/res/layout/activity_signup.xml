@@ -45,7 +45,9 @@
                     android:layout_marginTop="40dp"
                     android:padding="8dp"
                     android:hint="Identificacion"
+                    android:inputType="number"
                     android:drawableLeft="@drawable/ic_baseline_id"
+                    android:drawableTint="@color/blue_900"
                     android:drawablePadding="8dp"
                     android:textColor="@color/grey"/>
 
@@ -58,6 +60,7 @@
                     android:padding="8dp"
                     android:hint="Nombre"
                     android:drawableLeft="@drawable/baseline_person_24"
+                    android:drawableTint="@color/blue_900"
                     android:drawablePadding="8dp"
                     android:textColor="@color/grey"/>
 
@@ -69,7 +72,9 @@
                     android:layout_marginTop="20dp"
                     android:padding="8dp"
                     android:hint="Teléfono"
+                    android:inputType="phone"
                     android:drawableLeft="@drawable/baseline_local_phone_24"
+                    android:drawableTint="@color/blue_900"
                     android:drawablePadding="8dp"
                     android:textColor="@color/grey"/>
 
@@ -82,6 +87,7 @@
                     android:padding="8dp"
                     android:hint="Correo"
                     android:drawableLeft="@drawable/baseline_email_24"
+                    android:drawableTint="@color/blue_900"
                     android:drawablePadding="8dp"
                     android:textColor="@color/grey"/>
 
@@ -95,26 +101,10 @@
                     android:hint="Contraseña"
                     android:inputType="textPassword"
                     android:drawableLeft="@drawable/key"
+                    android:drawableTint="@color/blue_900"
                     android:drawablePadding="8dp"
                     android:textColor="@color/black"/>
 
-                <Spinner
-                    android:id="@+id/spinner_role"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/blue_border"
-                    android:layout_marginTop="20dp"
-                    android:padding="8dp"
-                    android:prompt="@string/role_prompt"/>
-
-                <Spinner
-                    android:id="@+id/spinner_status"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/blue_border"
-                    android:layout_marginTop="20dp"
-                    android:padding="8dp"
-                    android:prompt="@string/status_prompt"/>
 
                 <Button
                     android:layout_width="match_parent"

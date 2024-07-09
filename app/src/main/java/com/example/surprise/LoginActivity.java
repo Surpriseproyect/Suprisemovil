@@ -16,9 +16,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.surprise.API.ApiClient;
 import com.example.surprise.API.ApiResponse;
-import com.example.surprise.MainActivity;
-import com.example.surprise.R;
-import com.example.surprise.SignupActivity;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
@@ -77,9 +74,9 @@ public class LoginActivity extends AppCompatActivity {
                         ApiResponse apiResponse = gson.fromJson(response.toString(), ApiResponse.class);
                         if (!apiResponse.isError()) {
                             Toast.makeText(LoginActivity.this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
-                            // Aquí puedes manejar la navegación basada en el rol del usuario
-                            String rol = apiResponse.getBody().getRol();
-                            navigateBasedOnRole(rol);
+                            // Navegar directamente a MainActivity sin verificar el rol
+                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                            finish();
                         } else {
                             Toast.makeText(LoginActivity.this, "Error en el inicio de sesión", Toast.LENGTH_SHORT).show();
                         }
@@ -93,17 +90,5 @@ public class LoginActivity extends AppCompatActivity {
                 });
 
         ApiClient.getInstance(this).addToRequestQueue(jsonObjectRequest);
-    }
-
-    private void navigateBasedOnRole(String rol) {
-        // Implementa la lógica de navegación basada en el rol del usuario
-        // Por ejemplo:
-        if ("/producto".equals(rol)) {
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-        } else {
-            // Manejar otros roles o mostrar un mensaje de error
-            Toast.makeText(this, "Rol no reconocido", Toast.LENGTH_SHORT).show();
-        }
-        finish();
     }
 }
