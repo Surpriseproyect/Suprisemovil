@@ -56,30 +56,30 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     private void registerUser() {
-        int id, phone;
-        String name, email, password;
+        int identificacion, telefono;
+        String nombres, correo, contrsena;
 
         try {
-            id = Integer.parseInt(etId.getText().toString().trim());
-            phone = Integer.parseInt(etPhone.getText().toString().trim());
+            identificacion = Integer.parseInt(etId.getText().toString().trim());
+            telefono = Integer.parseInt(etPhone.getText().toString().trim());
         } catch (NumberFormatException e) {
             Toast.makeText(this, "La identificación y el teléfono deben ser números", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        name = etName.getText().toString().trim();
-        email = etEmail.getText().toString().trim();
-        password = etPassword.getText().toString().trim();
+        nombres = etName.getText().toString().trim();
+        correo = etEmail.getText().toString().trim();
+        contrsena = etPassword.getText().toString().trim();
         String role = "Cliente"; // Establecemos el rol como "Cliente"
         String status = "Pagado"; // Establecemos el estado como "Pagado"
 
         JSONObject jsonBody = new JSONObject();
         try {
-            jsonBody.put("id", id);
-            jsonBody.put("nombre", name);
-            jsonBody.put("telefono", phone);
-            jsonBody.put("correo", email);
-            jsonBody.put("contrasena", password);
+            jsonBody.put("identificacion", identificacion);
+            jsonBody.put("nombres", nombres);
+            jsonBody.put("telefono", telefono);
+            jsonBody.put("correo", correo);
+            jsonBody.put("contrasena", contrsena);
             jsonBody.put("rol", role);
             jsonBody.put("estado", status);
         } catch (JSONException e) {
